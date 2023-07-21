@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this passportFile, and also import other style files */
+@import 'assets/scss/variables';
+@import 'assets/scss/prefix';
+@import 'assets/scss/common';
+@import 'assets/icons/font/icons.css';
+
+/* Importing Bootstrap SCSS passportFile. */
+@import '~bootstrap/scss/bootstrap';
+
+/* Importing Selectbox-with-search SCSS passportFile. */
+// @import "~@ng-select/ng-select/themes/default.theme.css";
+
+/* Importing Date and Time picker SCSS passportFile. */
+// @import "~ng-pick-datetime/assets/style/picker.min.css";
+
+// @import '~ngx-toastr/toastr';
+// @import '~lightgallery/scss/lightgallery';
+@import '~lightgallery/scss/lightgallery.scss';
+@import '~lightgallery/scss/lg-zoom.scss';
+@import '~lightgallery/scss/lg-rotate.scss';
+@import '~lightgallery/scss/lg-fullscreen.scss';
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.lg-toolbar .lg-icon{
+  color: $white;
+  background-color: rgba(0,0,0,0.6);
+}
+
+// Font families
+@font-face {
+  font-family: tFont;
+  src: url(assets/fonts/Lato-Thin.ttf);
+}
+
+@font-face {
+  font-family: tiFont;
+  src: url(assets/fonts/Lato-ThinItalic.ttf);
+}
+
+@font-face {
+  font-family: lFont;
+  src: url(assets/fonts/Lato-Light.ttf);
+}
+
+@font-face {
+  font-family: liFont;
+  src: url(assets/fonts/Lato-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: rFont;
+  src: url(assets/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: riFont;
+  src: url(assets/fonts/Lato-Italic.ttf);
+}
+
+@font-face {
+  font-family: boFont;
+  src: url(assets/fonts/Lato-Bold.ttf);
+}
+
+@font-face {
+  font-family: boiFont;
+  src: url(assets/fonts/Lato-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: blFont;
+  src: url(assets/fonts/Lato-Black.ttf);
+}
+
+@font-face {
+  font-family: bliFont;
+  src: url(assets/fonts/Lato-BlackItalic.ttf);
+}

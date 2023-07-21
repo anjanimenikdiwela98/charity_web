@@ -1,0 +1,109 @@
+@import 'src/assets/scss/variables';
+
+.cbtn {
+  padding: 8px 20px;
+  border-radius: 4px;
+  border: 1px solid $white;
+  cursor: pointer;
+  min-width: 140px;
+  @extend .paragraph2-bold;
+
+  &.img-icon-btn {
+    img {
+      width: 16px;
+      vertical-align: text-top;
+    }
+  }
+
+  i {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  &.left-icon {
+    padding: 8px 18px 8px 12px;
+
+    @include mq("phablet", max) {
+      padding: 8px 12px 4px 8px;
+      min-width: unset;
+    }
+  }
+
+  &.right-icon {
+    padding: 8px 12px 4px 18px;
+  }
+
+  @include mq("desktop", max) {
+    padding: 4px 16px;
+    font-size: 14px;
+  }
+
+  &.primary-btn {
+    color: $white;
+    background: $red-gradient;
+    border: none;
+  }
+
+  &.secondary-btn {
+    color: $primary-600;
+    background: $white;
+    border: 1px solid $primary-200;
+  }
+
+  &.ghost-btn {
+    color: $gray-900;
+    background: $white;
+    border: 1px solid $gray-900;
+  }
+  &.borderless-btn {
+    color: $primary-600;
+    background: $white;
+    border: none;
+  }
+
+  &.success-btn {
+    color: $white;
+    background: $success-gradient;
+    border: none;
+  }
+
+  &.error-btn {
+    color: $white;
+    background: $error-gradient;
+    border: none;
+  }
+
+  &.warning-btn {
+    color: $white;
+    background: $warning-gradient;
+    border: none;
+  }
+
+  &.partial-btn {
+    color: $primary-600;
+    background: $primary-100;
+    border: none;
+  }
+
+  &.bg-less {
+    background: none;
+    color: $gray-600;
+    border: none;
+
+    &:hover {
+      background: $gray-300;
+    }
+  }
+
+  &:disabled {
+    background-color: $gray-300 !important;
+    background: none;
+    color: $white;
+    border-color: $gray-300;
+    cursor: default;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+}

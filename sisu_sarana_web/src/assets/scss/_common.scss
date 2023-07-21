@@ -1,0 +1,599 @@
+@import 'src/assets/scss/prefix';
+@import 'src/assets/scss/variables';
+@import 'component/buttons';
+@import 'component/alert';
+@import 'component/form';
+// @import 'component/data-table';
+
+.step-section {
+  padding: 16px;
+
+  @include mq("tablet", max) {
+    padding: 16px 8px;
+  }
+}
+
+.step-section-title {
+  display: flex;
+  border-bottom: 1px solid $primary-100;
+  padding-bottom: 16px;
+
+  .title-container {
+    width: calc(100% - 120px);
+  }
+
+  .title-action-container {
+    width: 150px;
+
+    button {
+      float: right;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    margin-bottom: 4px;
+    @extend .heading4-bold;
+    color: $primary-600;
+
+    @include mq("tablet", max) {
+      font-size: 22px;
+    }
+  }
+
+  p {
+    margin: 0;
+    @extend .paragraph2-regular;
+    color: $gray-300;
+  }
+}
+
+// Form styles
+.step-footer {
+  margin-top: 24px;
+  border-top: 1px solid $primary-100;
+  padding-top: 24px;
+  // padding-left: 26px;
+}
+
+.sp-notice {
+  p {
+    @extend .paragraph3-regular;
+    color: $gray-300;
+
+    i {
+      color: $gray-600;
+      font-size: 20px;
+      margin-right: 8px;
+      display: inline-flex;
+      vertical-align: sub;
+    }
+  }
+}
+
+.form-sub-heading {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  @extend .subheading-bold;
+}
+
+.note {
+  padding-left: 26px;
+
+  @include mq("phone", max) {
+    padding-left: 8px;
+  }
+
+  p {
+    @extend .caption-regular;
+    color: $gray-300;
+    margin: 0;
+
+    span {
+      @extend .caption-bold;
+      color: $gray-600;
+    }
+  }
+}
+
+// Image Upload styles
+
+.image-upload {
+  width: 240px;
+  margin-left: 26px;
+  margin-top: 8px;
+  text-align: center;
+
+  @include mq("phone", max) {
+    margin-left: 8px;
+  }
+
+  .upload-label {
+    @extend .paragraph2-regular;
+    margin-bottom: 0;
+  }
+}
+
+.normal-upload {
+  position: relative;
+  width: 240px;
+  height: 160px;
+  border: 1px dashed $primary-600;
+  border-radius: 8px;
+
+  .upload-details {
+    text-align: center;
+    margin: 24px 8px;
+
+    i.icon {
+      font-size: 48px;
+      color: $primary-600;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      display: block;
+      margin: auto;
+    }
+
+    h6 {
+      @extend .subheading-bold;
+      color: $gray-600;
+      margin: 0;
+    }
+
+    .choose-or-drag {
+      color: $primary-600;
+
+      span {
+        @extend .paragraph2-bold;
+
+      }
+
+      @extend .paragraph2-regular;
+
+    }
+
+    p {
+      @extend .caption-regular;
+      color: $gray-300;
+      margin-bottom: 8px;
+    }
+  }
+
+  .reset-upload {
+    position: absolute;
+    background-color: $primary-600;
+    width: 24px;
+    height: 24px;
+    top: -12px;
+    right: -12px;
+    border-radius: 12px;
+    text-align: center;
+    padding: 2px;
+    color: $white;
+    z-index: 3;
+    display: none;
+
+    &.show {
+      display: block;
+
+      &.disabled {
+        display: none;
+      }
+    }
+  }
+
+  input {
+    // visibility: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+  }
+
+  .preview-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    background-color: $white;
+    z-index: 2;
+    border-radius: 8px;
+    text-align: center;
+
+    .actions {
+      position: absolute;
+      display: none;
+      z-index: 4;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+
+      a {
+        padding: 8px 10px;
+        display: inline-block;
+        text-decoration: none;
+        color: $primary-600;
+        cursor: pointer;
+        @extend .paragraph2-regular;
+
+        i {
+          font-size: 20px;
+          vertical-align: middle;
+          line-height: 20px;
+        }
+
+        &.disabled {
+          display: none;
+        }
+      }
+    }
+
+    &:hover {
+      .actions {
+        display: block;
+      }
+    }
+  }
+
+  img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 0;
+    border-radius: 8px;
+    margin: auto;
+  }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .normal-upload .preview-img .actions {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, .8);
+  }
+}
+
+// Toggle switch styles
+.vertical-toggle-list {
+  margin-top: 8px;
+  margin-left: 26px;
+
+  @include mq("phone", max) {
+    margin-left: 8px;
+  }
+}
+
+.toggle-switch {
+  margin-bottom: 8px;
+
+  .toggle-label {
+    margin-left: 24px;
+    @extend .paragraph2-regular;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 20px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    left: 0px;
+    bottom: -4px;
+    background-color: $gray-300;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.237602);
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: rgba($primary-600, .4);
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px $primary-600;
+  }
+
+  input:checked + .slider:before {
+    background-color: $primary-600;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.237602);
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
+
+// custom modal scss styles
+.modal-dialog {
+  .modal-content {
+    .modal-header {
+      border-bottom: none;
+
+      h4.modal-title {
+        @extend .subheading-bold;
+        color: $primary-600;
+      }
+
+      button {
+        outline: none;
+      }
+    }
+
+    .modal-footer {
+      border-top: none;
+    }
+  }
+}
+
+// Date picker SCSS
+.owl-dt-calendar-table .owl-dt-calendar-header .owl-dt-weekdays th {
+  font-family: rFont;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-content {
+  font-family: rFont;
+}
+
+.owl-dt-control-button .owl-dt-control-button-content {
+  font-family: rFont;
+}
+
+.owl-dt-calendar-multi-year-view .owl-dt-calendar-table .owl-dt-calendar-header th {
+  font-family: boFont;
+}
+
+.owl-dt-calendar-table .owl-dt-calendar-cell-selected {
+  background-color: $primary-600;
+}
+
+// Image POPOVER design SCSS styles
+.popover {
+  box-shadow: 2px 4px 20px 4px rgb(106 106 106 / 16%);
+
+  .popover-header {
+    background-color: $white;
+  }
+}
+
+.image-popover {
+
+  ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 12px;
+
+    li {
+      width: 120px;
+      // height: 120px;
+      float: left;
+      text-align: center;
+
+      .icon {
+        width: 48px;
+        height: 48px;
+        margin: auto;
+        text-align: center;
+
+        img {
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      p {
+        @extend .caption-regular;
+        color: $gray-300;
+      }
+    }
+
+    &.proof {
+      li {
+        .icon {
+          width: 80px;
+          height: 60px;
+
+          img {
+            width: 80px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-body {
+  p.modal-para {
+    @extend .paragraph2-regular;
+    color: $gray-300;
+  }
+}
+
+.loop-content {
+  position: relative;
+  border: 1px solid $gray-300;
+  padding: 16px;
+  border-radius: 8px;
+
+  @include mq("phone", max) {
+    padding: 16px 8px;
+  }
+}
+
+.nominee-count {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  padding: 5px 12px;
+  font-size: 15px;
+  background-color: #d3c9c9;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.modal .modal-body {
+  padding: 0.5rem 1rem;
+}
+
+.modal-open .modal {
+  z-index: 10000;
+}
+
+.form-group .alert.alert-danger {
+  max-width: 100%;
+  background-color: rgba($color: $error, $alpha: 0.1);
+  color: $error;
+  @extend .paragraph3-regular;
+  margin-top: 2px;
+  padding: 6px 16px;
+
+  @include mq("phone", max) {
+    max-width: none;
+  }
+
+  &.full-width {
+    max-width: 100%;
+  }
+}
+
+.ngx-otp-input-box {
+  .ngx-otp-input {
+    border-color: $gray-300 !important;
+  }
+}
+
+// Image capture - start
+
+.image-capture-container {
+  width: 100%;
+
+  .webcam-cont {
+    width: 100%;
+
+    video {
+      width: calc(498px - 2rem);
+      height: 350px;
+    }
+  }
+
+  .capture-actions {
+    display: flex;
+    justify-content: space-between;
+
+    .preview-img {
+      height: 80px;
+    }
+  }
+
+}
+
+.view-image-container {
+  width: 100%;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    margin: auto;
+  }
+}
+
+.popover-body {
+  p {
+    @extend .paragraph2-regular;
+    margin-bottom: 8px;
+  }
+}
+
+.ng2-pdf-viewer-container .pdfViewer {
+  overflow: hidden;
+}
+
+.separate-dial-code {
+  @include mq("phone", max) {
+    width: 100%;
+  }
+}
+
+// Toaster message styles
+.toast-container {
+  .ngx-toastr {
+    border-width: 1px;
+    border-style: solid;
+    padding: 8px 16px 8px 52px !important;
+    border-radius: 8px !important;
+
+    .toast-close-button {
+      color: $gray-300;
+    }
+
+    &.toast-error {
+      border-color: $error;
+      background-color: white;
+      background-image: url(/assets/images/svg/cross-red.svg);
+
+      .toast-title {
+        color: $error;
+      }
+
+      .toast-message {
+        color: $gray-600;
+      }
+    }
+
+    &.toast-success {
+      border-color: $success;
+      background-color: white;
+      background-image: url(/assets/images/svg/tick-green.svg);
+
+      .toast-title {
+        color: $success;
+      }
+
+      .toast-message {
+        color: $gray-600;
+      }
+    }
+  }
+}
